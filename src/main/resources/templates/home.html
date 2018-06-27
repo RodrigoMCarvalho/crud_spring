@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Olá Mundo</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+	<div class="container">
+		<h2>CRUD</h2>
+		<form th:action="@{/cadastrar}" method="POST">
+			<label for="nome">Nome: </label>
+			<input class="form-control" name="nome" type="text"style="width: 600px"><br> 
+			
+			<label for="dataNascimento">Data de nascimento:</label>
+			<input name="dataNascimento" class="form-control" type="date" style="width: 150px"><br> 
+			<button class="btn btn-primary">Cadastrar</button>
+		</form>
+		<br>
+		<strong th:text="${success}"></strong>
+	</div>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
