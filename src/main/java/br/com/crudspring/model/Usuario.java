@@ -1,6 +1,6 @@
 package br.com.crudspring.model;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,7 +25,7 @@ public class Usuario {
 	
 	@DateTimeFormat(iso = ISO.DATE)
 	@Column(name = "data_nascimento", nullable = false)
-	private Calendar dataNascimento;
+	private LocalDate dataNascimento;
 
 	public Long getId() {
 		return id;
@@ -43,11 +43,11 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public Calendar getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Calendar dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 	
