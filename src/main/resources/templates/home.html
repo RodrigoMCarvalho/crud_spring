@@ -45,8 +45,10 @@
 				<th><span th:text="${usuario.id}"></span></th>
 				<td><span th:text="${usuario.nome}"></span></td>
 				<td><span th:text="${#temporals.format(usuario.dataNascimento, 'dd/MM/yyyy')}"></span></td>
-				<td><a th:href="@{/update/} + ${usuario.id}" class="btn btn-info btn-xs">Editar</a></td>
-				<td><a th:href="@{/deletar/} + ${usuario.id}" class="btn btn-danger btn-xs">Remover</a></td>
+				<td colspan="2">
+				<a th:href="@{/update/} + ${usuario.id}" class="btn btn-info btn-xs">Editar</a>
+				<a th:href="@{/deletar/} + ${usuario.id}" class="btn btn-danger btn-xs">Remover</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>
