@@ -25,8 +25,7 @@ public class UsuarioService {
 	}
 	
 	public Optional<Usuario> buscarPorId(Long id){
-		 Optional<Usuario> usuario = dao.findById(id);
-		 return usuario;
+		 return dao.findById(id);
 	}
 	
 	public void excluirPorId(Long id) {
