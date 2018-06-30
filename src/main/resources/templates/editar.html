@@ -3,22 +3,20 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>CRUD Spring</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-
 	<div class="container">
 		<h2>CRUD Spring</h2>
-		<form th:action="@{/cadastrar}" 
-			 th:object="${usuario}" method="POST">
+		<form th:action="@{/editar}" th:object="${usuario}" method="POST">
 			 
 			 	<input type="hidden" id="id" name="id" th:field="*{id}"/>
 			 
 				<label for="nome">Nome: </label> <input class="form-control"
-				name="nome" type="text" style="width: 600px">
+				name="nome" type="text" style="width: 600px" th:field="*{nome}">
 				<br> 
 				
 				<label for="dataNascimento">Data de nascimento:</label> <input
@@ -29,28 +27,6 @@
 			<button class="btn btn-primary">Cadastrar</button>
 			
 		</form>
-		<br> <strong th:text="${success}" style="color: red"></strong>
-		<br>
-	<table class="table table-hover">
-		<thead>
-			<tr>
-				<th scope="col">#</th>
-				<th scope="col">Nome</th>
-				<th scope="col">Data de Nascimento</th>
-				<th scope="col">Opções</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="usuario : ${usuarios}">
-				<th><span th:text="${usuario.id}"></span></th>
-				<td><span th:text="${usuario.nome}"></span></td>
-				<td><span th:text="${usuario.dataNascimento.time}"></span></td>
-				<td><a th:href="@{/update/} + ${usuario.id}" class="btn btn-info btn-xs">Editar</a></td>
-				<td><a th:href="@{/deletar/} + ${usuario.id}" class="btn btn-danger btn-xs">Remover</a></td>
-			</tr>
-		</tbody>
-	</table>
-	
 	</div>
 	
 	<script src="js/jquery.js"></script>

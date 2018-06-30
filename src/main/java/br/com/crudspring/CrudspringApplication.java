@@ -25,4 +25,5 @@ public class CrudspringApplication {
 		
 		return adapter;
 	}
+	
 }
